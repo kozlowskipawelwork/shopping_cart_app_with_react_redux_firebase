@@ -25,6 +25,7 @@ export const CartItem = ({item}) => {
             <input 
             type='number' 
             min='1' 
+            value = {item.quantityInCart}
             />
             
         </CartInfoStyle>
