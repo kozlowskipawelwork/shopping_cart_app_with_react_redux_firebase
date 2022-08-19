@@ -1,8 +1,9 @@
 import React from 'react'
+import { ProductItemStyle, CartAddButton } from '../../styles/ProductScreen'
 
 const ProductItem = ({item}) => {
     return (
-        <div>
+        <ProductItemStyle primary>
         <img style={{width:'100px'}} src ={item.image} alt = {item.title}></img>
         <h3 style ={{
             border: '1px solid black',
@@ -19,11 +20,14 @@ const ProductItem = ({item}) => {
             color:'gray'
         }}>{item.description}</p>
 
+        <CartAddButton 
+        //onClick={addToCartHandler} 
+        primary>
+            Add to Cart
+        </CartAddButton>
 
+        </ProductItemStyle>
 
-
-
-        </div>
     )
 }
 
