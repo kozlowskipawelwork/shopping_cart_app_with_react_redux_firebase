@@ -30,6 +30,11 @@ const CartScreen = () => {
 
     return(
         <div>
+      {loading ?(
+        <div>loading...</div>
+      ): error ?(
+        <div>loading...</div>
+      ):(
         <>
         <PageHeading>cart</PageHeading>
         <CartContainerStyle>
@@ -39,7 +44,10 @@ const CartScreen = () => {
   
         </CartContainerStyle>
         </>
-        </div>
+      )}
+       
+        
+    </div>
     )
 }
 
