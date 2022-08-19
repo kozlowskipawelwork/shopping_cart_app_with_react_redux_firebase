@@ -1,5 +1,6 @@
 import React from 'react'
 import {products} from '../../constants/products'
+import ProductItem from '../../components/product/ProductItem'
 
 const ProductScreen = () => {
     return (
