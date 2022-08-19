@@ -1,5 +1,5 @@
 import React from 'react'
-import {products} from '../../constants/products'
+//import {products} from '../../constants/products'
 import ProductItem from '../../components/product/ProductItem'
 import { PageHeading, ProductContainerStyle } from '../../styles/ProductScreen'
 import { useDispatch, useSelector } from 'react-redux'
@@ -19,12 +19,20 @@ const ProductScreen = () => {
 
     return (
         <div>
+            {loading ? (
+          <div>Loading...</div>
+        ) : error ? (
+          <div>{error}</div>
+        ) : (
+            <>
             <PageHeading primary>Products</PageHeading>
             <ProductContainerStyle primary>
             {products.map((item) => (
                 <ProductItem item={item} />
               ))}
             </ProductContainerStyle>
+            </>
+            )}
         </div>
 
     )
