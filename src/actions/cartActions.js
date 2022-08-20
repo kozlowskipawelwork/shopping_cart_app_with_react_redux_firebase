@@ -107,3 +107,26 @@ import {
       })
     }
   }
+
+  export const deleteItemFromCart = (cart_item_id) => async (dispatch) => {
+    try {
+      dispatch({ type: CART_ITEM_REMOVE_REQUEST })
+  
+      await deleteDoc(doc(db, 'cartItems', cart_item_id))
+  
+      alert(cart_item_id + ' was successfully deleted')
+  
+      window.location.reload()
+  
+      dispatch({ type: CART_ITEM_REMOVE_SUCCESS })
+    } catch (error) {
+      dispatch({
+        type: CART_ITEM_REMOVE_FAIL,
+        payload:
+          error.response && error.response.data.message ? error.response.data.message : error.message
+      })
+    }
+  }
+  
+
+

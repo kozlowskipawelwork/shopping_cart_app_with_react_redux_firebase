@@ -1,16 +1,20 @@
 import React from 'react'
 import { CartItemStyle, CartDeleteButtonStyle, CartInfoStyle  } from '../../styles/CartScreen'
-import { updateCartQty } from '../../actions/cartActions'
+import { updateCartQty, deleteItemFromCart } from '../../actions/cartActions'
 import { useDispatch } from 'react-redux'
 
 
 export const CartItem = ({item}) => {
     const [qty, setQty] = React.useState(Number(item.quantityInCart))
     const dispatch = useDispatch()
-    const handleCartQty = (itemId, qty) => {
-        dispatch(updateCartQty(itemId, qty))
+    const handleCartQty = (item) => {
+        dispatch(updateCartQty(item, Number(qty)))
       } 
+
+      const handleCartDelete = (cartItemId) => {
+        dispatch(deleteItemFromCart(cartItemId))}
     
+      
     return (
         <CartItemStyle>
             <img src={item.image} 
@@ -40,7 +44,7 @@ export const CartItem = ({item}) => {
             
         </CartInfoStyle>
             <CartDeleteButtonStyle 
-            //onClick= {() => handleCartDelete(item.id)}
+            onClick= {() => handleCartDelete(item.id)}
             >
                 
                 Delete
