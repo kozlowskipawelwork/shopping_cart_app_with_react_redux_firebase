@@ -1,7 +1,15 @@
 import React from 'react'
 import { ProductItemStyle, CartAddButton } from '../../styles/ProductScreen'
+import { useDispatch } from 'react-redux'
+import { addProductToCart } from '../../actions/cartActions'
+
 
 const ProductItem = ({item}) => {
+    const dispatch = useDispatch()
+    const addToCartHandler = () =>{
+        dispatch(addProductToCart(item))
+
+    }
     return (
         <ProductItemStyle primary>
         <img style={{width:'100px'}} src ={item.image} alt = {item.title}></img>
@@ -21,7 +29,7 @@ const ProductItem = ({item}) => {
         }}>{item.description}</p>
 
         <CartAddButton 
-        //onClick={addToCartHandler} 
+        onClick={addToCartHandler} 
         primary>
             Add to Cart
         </CartAddButton>

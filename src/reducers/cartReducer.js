@@ -30,3 +30,26 @@ export const listCartItemsReducer = (state = {cartItems: []}, action) => {
 
     }
 }
+
+export const addItemToCartReducer = (state={newCartItem: {}},action)=>{
+    switch(action.type){
+        case CART_ITEM_ADD_REQUEST:
+            return{
+                ...state,
+                cartItems: [...state.cartItems,action.payload],
+            }
+        case CART_ITEM_ADD_SUCCESS:
+            return{
+                loading: false,
+                newCartItem:action.payload,
+            }
+        case CART_ITEM_ADD_FAIL:
+            return{
+                loading: false,
+                error:action.payload,
+            }
+        default:
+            return state
+    }
+
+}
