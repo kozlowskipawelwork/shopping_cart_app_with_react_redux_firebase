@@ -5,14 +5,15 @@ import ProductScreen from './containers/products/ProductScreen';
 //import {BrowserRouter as Routes, Route} from 'react-router-dom';
 import CartScreen from './containers/cart/CartScreen';
 //as the cart sceen appears, i need to work out the routings.
-/*<ProductScreen />*/
+/*<CartScreen/>*/
 function App() {
   return (
     
       <div className="App">
+        <ProductScreen />
         
         
-          <CartScreen/>
+          
       </div>
     
 )}
