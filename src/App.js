@@ -9,11 +9,16 @@ import {
   } from "react-router-dom";
 import CartScreen from './containers/cart/CartScreen';
 //as the cart sceen appears, i need to work out the routings.
+<<<<<<< HEAD
 /*<CartScreen/>*/ 
+=======
+/*<CartScreen/>*/
+>>>>>>> 082989cd9ea415129ce0fc9c6597da82542a84c1
 function App() {
   return (
     
       <div className="App">
+<<<<<<< HEAD
         <Router>
             <Navbar/>
             <Switch>
@@ -24,6 +29,12 @@ function App() {
         
         
          
+=======
+        <ProductScreen />
+        
+        
+          
+>>>>>>> 082989cd9ea415129ce0fc9c6597da82542a84c1
       </div>
     
 )}
