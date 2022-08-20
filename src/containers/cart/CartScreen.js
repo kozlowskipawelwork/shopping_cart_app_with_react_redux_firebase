@@ -14,8 +14,6 @@ const cartItems= [{
 
 }]*/
 
-
-
 const CartScreen = () => {
     
     const dispatch = useDispatch()
@@ -25,7 +23,8 @@ const CartScreen = () => {
     const {loading, error, cartItems} = cartItemsList
 
     React.useEffect(()=>{
-        dispatch(listCartItems())}, [dispatch])
+        dispatch(listCartItems())}, 
+        [dispatch])
 
 
     return(
