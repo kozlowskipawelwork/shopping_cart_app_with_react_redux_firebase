@@ -1,1 +1,1 @@
-had a lot of issues with this, the navbar does not work, the routes provided in the tutorial dont work, the createstore module is outdated. I may have learned something, but not much. Based on this  video -https://www.youtube.com/watch?v=_zWOpsv4jW4 
+based on this tutorial -https://www.youtube.com/watch?v=_zWOpsv4jW4  - still working out the issues with the cart data display.
